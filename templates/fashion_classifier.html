@@ -36,13 +36,13 @@
           <div class="row">
             <nav class="navbar bg-primary">
               <div class="col-sm-1">
-                <a class="navbar-brand fw-bold col-sm-1" href="{{ url_for('get_template', filename='about.html') }}">Raymond Martinez</a>
+                <a class="navbar-brand fw-bold col-sm-1" href="../index.html">Raymond Martinez</a>
               </div>
     
               <div class="col-sm-4">
-                <a class="navbar-brand fw-bold col-sm-2" href="{{ url_for('main') }}">Fashion Classifier</a>
-                <a class="navbar-brand fw-bold col-sm-4" href="{{ url_for('get_template', filename='projects.html') }}">Projects</a>
-                <a class="navbar-brand fw-bold col-sm-3" href="{{ url_for('get_template', filename='resume.html') }}">Resume</a>
+                <a class="navbar-brand fw-bold col-sm-2" href="fashion_classifier.html">Fashion Classifier</a>
+                <a class="navbar-brand fw-bold col-sm-4" href="projects.html">Projects</a>
+                <a class="navbar-brand fw-bold col-sm-3" href="resume.html">Resume</a>
               </div>
             </nav>
           </div>
@@ -54,38 +54,6 @@
     <!-- Container Explaining the Goal of the website and model -->
     <div class="container">
         <h2>Fashion Classification</h2>
-
-        <br>
-        <!-- Input Field Container -->
-        <div class="container">
-            <form action="{{ url_for('main') }}" method="POST" enctype="multipart/form-data">
-                <label for="user_image"> Input your image: </label>
-                <input type="file" id="user_image" name="user_image" accept="image/png, image/jpeg" required />
-                <br>
-                <br>
-                <input type="submit">
-            </form>
-        </div>
-
-        <br>
-
-        <!-- Results Container -->
-        <div class="container">
-            <div class="result">
-                {% if result %}
-                Predicted result is:
-                {{result}}
-                with a confidence of
-                {{confidence}}
-                {% endif %}
-            </div>
-
-            <div class="badfile">
-                {% if badfile %}
-                <p>bad file submitted</p>
-                {% endif %}
-            </div>
-        </div>
 
         <br>
         
@@ -119,17 +87,17 @@
         <div class="row">
             <div class="col-sm-4">
                 <p>This pair of trousers received a 99% chance of it being trousers.</p>
-                <img src="{{ url_for('static', filename='images/trousers.jpg') }}" class="img-responsive margin"
+                <img src="..\static\images\ExampleClothes\trousers.jpg" class="img-responsive margin"
                     style="width:100%" alt="A photograph of a pair of trousers over a white cloth background">
             </div>
             <div class="col-sm-4">
                 <p>This pullover received a 68% chance of it being a pullover.</p>
-                <img src="{{ url_for('static', filename='images/pullover.jpg') }}" class="img-responsive margin"
+                <img src="..\static\images\ExampleClothes\pullover.jpg" class="img-responsive margin"
                     style="width:100%" alt="A photograph of a pullover over a white cloth background">
             </div>
             <div class="col-sm-4">
                 <p>This sneaker received a 99% chance of it being a sneaker.</p>
-                <img src="{{ url_for('static', filename='images/sneaker.jpg') }}" class="img-responsive margin"
+                <img src="..\static\images\ExampleClothes\sneaker.jpg" class="img-responsive margin"
                     style="width:100%" alt="A photograph of a sneaker over a white cloth background">
             </div>
         </div>
